@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+ <script type="text/javascript">
+   window.onload=function(){
+	   var btn_1 = window.document.getElementById("btn_1")
+	   var btn_2 = window.document.getElementById("btn_2")
+	   
+	   btn_1.addEventListener("click", function(e){
+		   //1.이벤트 생성
+		   var myEvent = document.createEvent("Event");
+		   //2.이벤트 객체에 이벤트 와 함께 담아 보낼 데이터 추가
+		   myEvent.data1 = "이 정보를 이벤트에 담아서 보내주세요.";
+		   //3.이벤트 초기화
+		   myEvent.initEvent("myEvent",false,false);
+		   //4.이벤트 발생
+		   btn_2.dispatchEvent(myEvent);
+	   });
+	   btn_2.addEventListener("myEvent", function(e){
+		   alert("myEvent 이벤트 발생, target = "+e.target.id+", data 1 = "+e.data1);
+	   });
+   } 
+ </script>
+</head>
+<body>
+  <button id="btn_1">버튼1</button>
+  <button id="btn_2">버튼2</button>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>jquery 사용준비</title>
+<style>
+   body{
+      font-size : 9pt;
+      font-family:"굴림";
+   }
+</style>
+<script type="text/javascript" src="libs/jquery-1.7.1.min.js"></script>
+<script>
+   //1번
+   jQuery(document).ready(function(){
+	   jQuery("div").text("image, swf 같은 내용은 로딩되지 않았지만 dom을 사용할 준비가 되었습니다.");
+   });
+   
+   //2번
+   //1번을 좀더 간소화 하면 ?
+   jQuery("function(){
+	   jQuery("div").text("image, swf 같은 내용은 로딩되지 않았지만 dom을 사용할 준비가 되었습니다.");
+   });
+   
+   //3번
+   //1번에서 jQuery 함수대신 $ 함수로 변경. 좀더 간소화됐죠?
+   $(document).ready(function(){
+	   $("div").text("image, swf같은 내용은 로딩되지 않지만 dom을 사용할 준비가 되었습니다.");
+   });
+   
+   //4번
+   //3번을 좀더 간소화 한다면?
+  $(function(){
+	  $("div").text("image, swf같은 내용은 로딩되지 않지만 dom을 사용할 준비가 되었습니다.");
+  });
+</script>
+</head>
+<body>
+
+</body>
+</html>

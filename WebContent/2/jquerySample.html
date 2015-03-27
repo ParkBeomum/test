@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+   
+   <script type = "text/javascript" src="libs/jquery-1.7.1.min.js"></script>
+   
+   <script>
+      window.onload=function(){
+    	  solve_1();	
+      }
+    	  function solve_1(){
+    		  var $p_sample_2 = $("p.sample[data-id=2]");
+    		  $p_sample_2.text("완전 중요 데이터");
+    		  $p_sample_2.css("color","#ff0000");
+    	  }
+    	  function solve_2(){
+    		  var $p_sample_2 = $("p.sample-id=2");
+              $p_sample_2.text("완전 중요 데이터");
+              $p_sample_2.css("color","#ff0000");
+    	  }
+    	  function solve_3(){
+    		var $p_sample_2 = $("p[data-id=2]");
+    		
+    		$p_sample_2.text("완전 중요 데이터");
+    		$p_sample_2.css("color","#ff0000");
+    	  }
+    	  function solve_4(){
+    		var $p_sample_2=$("div div div p");
+    		
+    		$p_sample_2.text("완전 중요 데이터").css("color","#ff0000");
+    	  }
+    	  function solve_5(){
+    		  var $p_sample_2 = $("p:eq(1)");
+    		  
+    		  $p_sample_2.text("완전 중요 데이터").css("color","#ff0000");
+    	  }
+           
+    	  
+/*     	  function solve_1(){
+    		  // 클래스 이름으로 element 가져온다.(복수)
+    		  var samples = document.getelementbyClassName("sample");
+    		  for(var i=0; i<sample.length; i++){
+    			  var sample = samples.item(i);
+    			  //조건과 동일하면 변경
+    			  if(sample.nodeName == "p" && sample.getAttribute("data-id")=="2"){
+    				  sample.firstChild.nodeValue ="완전 중요 데이터";
+    				  sample.style.color = "#ff0000";
+    			  }
+    		  }
+    	  }
+    	  
+    	  function solve_2(){
+    		  //태그로 element 가져온다 (복수)
+    		  var samples = document.getElementsByTagName("p")   
+    		 for(var i =0; i<samples.length; i++){
+    			 var sample = samples.item(i);
+    			 //<p>태그중 다음과 같은 조건이 맞을경우 변경
+    			 if(sample.getAttribute("data-id")=="2"){
+    				 sample.firstChild.nodeValue = "완전 중요 데이터"
+    				 sample.style.color="#ff0000";
+    			 }
+    		 }  
+    	  }
+    	  
+    	  function solve_3(){
+    		  //sample 클래스이름으로 가져온뒤 (배열형식)
+    		  var samples=document.getelementbyClassName("sample");
+    		  //바꿔야할 위치에 noValue 로 데이터 변경
+    		  sample[2].firstChild.nodeValue="완전 중요 데이터";
+    		  samples[2].style.color ="#ff0000";
+    	  }
+    	   */
+      
+   </script>
+</head>
+<body>
+   <div>
+       <div class="sample" data-id="1">
+        데이터1
+       </div>
+       <div class="content">
+          <p class="sample" data-id="1">
+          데이터2
+          </p>
+       </div>
+       <div>
+          <div>
+             <p class="sample" data-id="2">데이터3</p>
+          </div>
+       </div>
+        <div class="sample" data-id="2">
+         데이터4
+        </div> 
+  </div>
+</body>
+</html>
